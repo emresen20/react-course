@@ -3,16 +3,20 @@ import Button from "./components/Button"
 import Texts from "./components/Texts"
 function App() {
 
-  const [babu,setBabu]=useState(1)
+  const [babu,setBabu]=useState([])
   const [name,setName]=useState("")
-  const clickfunc=()=>{
-    setBabu("değişti")
+  const clickfunc=(e)=>{
+   setName(e.target.value)
   }
+  const basfunc=()=>{
+     setBabu(prev => ([...prev,name]))
+     document.getElementById("inputField").value = "";
+   }
 
   return (
     <>
       <div onClick={()=>setBabu(babu+1)}>
-        arttır
+        {name}
       </div>
       <div >
        {babu}
@@ -22,8 +26,17 @@ function App() {
       </div>
       <Texts text={"selam ben props"} name={"React "} />
       <Button name={"bassssss"} onClick={()=>setBabu(babu+1)}/>
-      <Button name={"+++"}/>
-      {/* <input type="text" onChange={(e)=> setName(e.target.value)}/> //inputta böyle kullanulır */}
+      <Button name={"+++"} onClick={basfunc}/>
+      <input type="text" onChange={clickfunc} id="inputField"/> 
+      <div>
+        {
+          babu.map((dt,i)=> (
+            <div>
+              {dt}
+            </div>
+          ))
+        }
+      </div>
      
     </>
 
