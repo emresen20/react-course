@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Texts = ({text}) => {
+const Texts = ({text,name}) => {
   return (
     <div>
       {text}
+      {name}
     </div>
   )
 }

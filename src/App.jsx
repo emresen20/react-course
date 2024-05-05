@@ -1,9 +1,5 @@
+import Button from "./components/Button"
 import Texts from "./components/Texts"
-import Home from "./pages/Home"
-
-
-
-
 function App() {
 
   return (
@@ -17,7 +13,9 @@ function App() {
       <div >
         react eğitimi3
       </div>
-      <Texts text={"selam ben props"}/>
+      <Texts text={"selam ben props"} name={"React "} />
+      <Button name={"merhaba"}/>
+      <Button name={"+++"}/>
      
     </>
 
