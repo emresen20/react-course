@@ -1,43 +1,32 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Button from "./components/Button"
 import Texts from "./components/Texts"
+
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+
+} from 'react-router-dom'
+import Home from "./pages/Home"
+import Detail from "./pages/Detail"
+
 function App() {
 
-  const [babu,setBabu]=useState([])
-  const [name,setName]=useState("")
-  const clickfunc=(e)=>{
-   setName(e.target.value)
-  }
-  const basfunc=()=>{
-     setBabu(prev => ([...prev,name]))
-     document.getElementById("inputField").value = "";
-   }
+  
+  const [name,setName]=useState("react ")
 
   return (
     <>
-      <div onClick={()=>setBabu(babu+1)}>
-        {name}
-      </div>
-      <div >
-       {babu}
-      </div>
-      <div onClick={()=>setBabu(babu-1)}>
-       azalt
-      </div>
-      <Texts text={"selam ben props"} name={"React "} />
-      <Button name={"bassssss"} onClick={()=>setBabu(babu+1)}/>
-      <Button name={"+++"} onClick={basfunc}/>
-      <input type="text" onChange={clickfunc} id="inputField"/> 
-      <div>
-        {
-          babu.map((dt,i)=> (
-            <div>
-              {dt}
-            </div>
-          ))
-        }
-      </div>
-     
+
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/detail/:id" element={<Detail/>}/>
+      </Routes>
+    </Router>
+  
     </>
 
   )
