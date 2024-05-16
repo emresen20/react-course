@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from "./pages/Home";
 import Texts from './components/Texts';
+import Useeffect from './pages/Useeffect';
 
 function App() {
 
@@ -8,9 +9,7 @@ function App() {
   const alak="kalem kağıt"
   return (
     <div>  
-      <Home>
-        <Texts text={"emre şen0"} name={"childeren öğrenme"}/>   
-      </Home>
+      <Useeffect/>
   
     </div> // bu children yapısı companent içi companent için kullanılır
   );

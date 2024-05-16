@@ -7,8 +7,8 @@ const Home = ({children}) => {
   
   return (
     <div>
-      <div>Container bu</div>
-      {children}
+      <div>Container bu</div> 
+      {children} 
     </div>
   )
 }
