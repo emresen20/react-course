@@ -1,35 +1,19 @@
-import { useEffect, useState } from "react"
-import Button from "./components/Button"
-import Texts from "./components/Texts"
-
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-
-} from 'react-router-dom'
-import Home from "./pages/Home"
-import Detail from "./pages/Detail"
+import React from 'react';
+import Home from "./pages/Home";
+import Texts from './components/Texts';
 
 function App() {
 
-  
-  const [name,setName]=useState("react ")
-
+  const u = "salako"
+  const alak="kalem kağıt"
   return (
-    <>
-
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/detail/:id" element={<Detail/>}/>
-      </Routes>
-    </Router>
+    <div>  
+      <Home>
+        <Texts text={"emre şen0"} name={"childeren öğrenme"}/>   
+      </Home>
   
-    </>
-
-  )
+    </div> // bu children yapısı companent içi companent için kullanılır
+  );
 }
 
-export default App
+export default App;
