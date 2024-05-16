@@ -5,11 +5,11 @@ const Course = ({course}) => {
   return (
     <div className='course'>
         <div>
-            <img src={image} width={250} height={250}/>
-            <h4>{title}</h4>
+            <img src={image} width={350} height={250}/>
+            <h4 className='course-title'>{title}</h4>
             <h5>{description}</h5>
             <h3>{price}</h3>
-            <a href={link}> bas git</a>
+            <a href={link} style={{textDecoration: "none"}}> bas git</a>
         </div>
     </div>
   )

@@ -1,0 +1,16 @@
+.couse-main{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.course-title{
+    text-align: center;
+    font-size: 25px;
+}
+.course{
+    padding: 10px;
+    margin: 6px;
+}
