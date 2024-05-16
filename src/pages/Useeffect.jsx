@@ -10,6 +10,7 @@ const Useeffect = () => {
 
     useEffect(()=>{
         console.log("SAyfa İlk render edildiğinde çalışan useffecet")
+        //veritabanında bunu koy
     },[])
 
     useEffect(()=>{
