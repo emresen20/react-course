@@ -14,12 +14,23 @@ const App = () => {
   }
 
   useEffect(()=>{
-    getUSerbyId(1)
+    const newUser={
+        "username": "Kemal",
+        "password": "123123",
+
+    }
+    createUser(newUser)
+    
   },[])
 
   const getUSerbyId= async (userId)=>{
-    const response = await axios.get(BASE_URL+ "/users/"+userId)
+    const response = await axios.get(`${BASE_URL}/users/${userId}`)
     console.log(response.data)
+  }
+
+  const createUser= async (newUser)=>{
+  const response=  await axios.post(`${BASE_URL}/users`,newUser)
+    console.log("response",response.data)
   }
 
   return (
