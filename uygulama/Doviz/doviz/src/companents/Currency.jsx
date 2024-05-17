@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import '../css/Currency.css'
 import axios from 'axios';
 
+
+/// Api SİTESİNDE N HESABIMI SİLDİĞİMDEN DOLAYI ŞUAN ÇALIŞMAZ YENİ HESAP AÇMAK GEREKİR
+
 let Base_Url = "https://api.freecurrencyapi.com/v1/latest";
 let Api_Key = "fca_live_a4h1qtUoFCJXvYEwRBg03ecV8cHsqxb48IolH7GZ";
 
@@ -14,6 +17,7 @@ const Currency = () => {
     const exchange = async () => {
         try {
             const response = await axios.get(`${Base_Url}?apikey=${Api_Key}&base_currency=${fromCurrency}`);
+            console.log(response.data.data)
             const rate = response.data.data[toCurrency];
             if (rate) {
                 setResult(rate * amount);
@@ -43,6 +47,7 @@ const Currency = () => {
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="TRY">TRY</option>
+                    <option value="BGN">BGN</option>
                 </select>
                 <select
                     value={toCurrency}
@@ -51,6 +56,7 @@ const Currency = () => {
                     <option value="TRY">TRY</option>
                     <option value="EUR">EUR</option>
                     <option value="USD">USD</option>
+                    <option value="BGN">BGN</option>
                 </select>
                 <input
                     className='result'
